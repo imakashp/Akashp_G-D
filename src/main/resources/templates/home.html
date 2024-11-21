@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Home Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/Homepage.css">
+</head>
+<body id="Mainpage_logo">
+<header id="Mainpage_header" class="d-flex align-items-center justify-content-between">
+  <div class="d-flex align-items-center">
+    <img src="/images/hrmslogo.png" alt="HRMS Logo" id="Header_logo">
+    <h1 class="ml-3">Magadh University</h1>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success w-100">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#admin">Admin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#employee">Employee</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#student">Student</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<main id="main_home">
+  <div class="container mt-5">
+    <h2 id="h2_home" class="text-center mb-4">Welcome to the Institution Portal</h2>
+    <div class="row justify-content-center">
+      <!-- Admin Login -->
+      <div class="col-md-4">
+        <div class="card text-center shadow-sm" id="admin-card">
+          <div class="card-body">
+            <h5 class="card-title">Admin Login</h5>
+            <p class="card-text">Access administrative features and manage the institution.</p>
+            <a href="/admin-login" class="btn btn-primary">
+              <i class="fas fa-user-shield"></i> Admin Login
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Employee Login -->
+      <div class="col-md-4">
+        <div class="card text-center shadow-sm" id="employee-card">
+          <div class="card-body">
+            <h5 class="card-title">Employee Register</h5>
+            <p class="card-text">New Employee! Sign in to register and be part of our team</p>
+            <a href="/employees/create" class="btn btn-secondary">
+              <i class="fas fa-user-tie"></i> Employee Login
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Student Login -->
+      <div class="col-md-4">
+        <div class="card text-center shadow-sm" id="student-card">
+          <div class="card-body">
+            <h5 class="card-title">Student Register</h5>
+            <p class="card-text">New Student! Register and start your journey.</p>
+            <a href="/students/create" class="btn btn-success">
+              <i class="fas fa-user-graduate"></i> Student Login
+            </a>
+          </div>
+        </div>
+      </div>
+      <h3 id="h3_home" class="text-center mb-4">Latest Notifications</h3>
+      <ul class="text-center mb-4">
+        <li class="list-group-item" th:each="notification : ${notifications}">
+          <h5 th:text="${notification.title}"></h5>
+          <p th:text="${notification.description}"></p>
+          <small th:text="${#dates.format(notification.createdAt, 'yyyy-MM-dd HH:mm')}"></small>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</main>
+</body>
+</html>

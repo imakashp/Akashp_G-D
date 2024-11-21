@@ -1,0 +1,63 @@
+#Mainpage_header {
+    background-color: #28a745; /* Bootstrap's green */
+    color: white;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#Header_logo {
+    height: 80px; /* Adjusted logo height */
+    width: auto; /* Maintain aspect ratio */
+}
+
+#Mainpage_logo {
+    background-image: url('/images/slider-img.jpg'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire background */
+
+}
+
+.card:hover {
+    background-color: #f8f9fa; /* Light grey background on hover */
+    transition: background-color 0.3s ease;
+}
+
+#admin-card:hover {
+    background-color: #e0f7fa; /* Light teal background on hover */
+    transition: background-color 0.3s ease;
+}
+
+#employee-card:hover {
+    background-color: #f1f8e9; /* Light green background on hover */
+    transition: background-color 0.3s ease;
+}
+
+#student-card:hover {
+    background-color: #fce4ec; /* Light pink background on hover */
+    transition: background-color 0.3s ease;
+}
+#main_home{
+    position:relative;
+    top:200px
+}
+#h2_home{
+    padding:10px;
+    color:black;
+    background-color:white;
+    border-radius:2%;
+}
+#h3_home{
+    padding:10px;
+    color:black;
+    background-color:white;
+    border-radius:2%;
+    width:1000px
+
+}
